@@ -1,3 +1,1 @@
-# Gompelope-5G.github.io
-
-Gompelope's Grand Ghostly Garden Games
+# [WPI Cryptids Club](https://gompelope-5g.github.io/wpicryptidsclub)
