@@ -1,62 +1,52 @@
-<style>
-  body {
-    margin: 0;
-    background-color: #0b0003;
-    color: #e5b7b1;
-    font-family: 'Georgia', serif;
-    text-align: center;
-    overflow: hidden;
-  }
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>WPI Cryptids Club</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0b0003;
+      color: #e5b7b1;
+      font-family: 'Georgia', serif;
+      text-align: center;
+    }
 
-  h1 {
-    color: #a62e2e;
-    text-shadow: 0 0 10px #510000, 0 0 30px #300000;
-    margin-top: 1rem;
-  }
+    h1 {
+      color: #a62e2e;
+      text-shadow: 0 0 10px #510000, 0 0 30px #300000;
+      margin-top: 1rem;
+    }
 
-  #container {
-    position: relative;
-    max-width: 1280px;
-    margin: 2rem auto;
-  }
-
-  #unity-canvas {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background-color: #1a0000;
-    border: 2px solid #a62e2e44;
-    box-shadow: 0 0 60px #a62e2e88;
-    z-index: 1;
-  }
-
-  .decor {
-    position: absolute;
-    width: 100px;
-    z-index: 2;
-  }
-
-  .top-left { top: -30px; left: -30px; }
-  .top-right { top: -30px; right: -30px; }
-  .bottom-left { bottom: -30px; left: -30px; }
-  .bottom-right { bottom: -30px; right: -30px; }
-
-  .fog {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('fog.gif') repeat;
-    opacity: 0.15;
-    z-index: 0;
-    animation: drift 60s linear infinite;
-  }
-
-  @keyframes drift {
-    from { background-position: 0 0; }
-    to { background-position: 1000px 500px; }
-  }
-
-  audio {
-    display: none;
-  }
-</style>
-
+    #unity-canvas {
+      width: 100%;
+      max-width: 1280px;
+      aspect-ratio: 16 / 9;
+      background-color: #1a0000;
+      border: 2px solid #a62e2e44;
+      box-shadow: 0 0 60px #a62e2e88;
+      display: block;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>WPI Cryptids Club</h1>
+  <canvas id="unity-canvas" tabindex="-1"></canvas>
+  <script src="Build/wpicryptidsclub.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      arguments: [],
+      dataUrl: "Build/wpicryptidsclub.data",
+      frameworkUrl: "Build/wpicryptidsclub.framework.js",
+      codeUrl: "Build/wpicryptidsclub.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "WpiCryptidsClub",
+      productName: "Gompelope_Game",
+      productVersion: "1.0",
+    });
+  </script>
+</body>
+</html>
