@@ -1,65 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>WPI Cryptids Club</title>
-    <style>
-      body {
-        background-color: #0d0d0d;
-        color: #cccccc;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>WPI Cryptids Club</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #cccccc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
 
-      #unity-canvas {
-        background-color: #1a1a1a;
-        box-shadow: 0 0 30px #3bffed55;
-        border: 2px solid #3bffed22;
-        margin-top: 20px;
-      }
+    h1 {
+      color: #3bffed;
+      text-shadow: 0 0 5px #3bffed88, 0 0 10px #3bffed44;
+      margin-top: 1rem;
+    }
 
-      /* Optional spooky glow text effect */
-      h1 {
-        font-size: 2em;
-        color: #3bffed;
-        text-shadow: 0 0 5px #3bffed88, 0 0 10px #3bffed44;
-        margin-top: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>WPI Cryptids Club</h1>
-    <canvas id="unity-canvas" width="1280" height="720" tabindex="-1"></canvas>
-    <script src="Build/wpicryptidsclub.loader.js"></script>
-    <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-
-        var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.position = "fixed";
-
-        document.body.style.textAlign = "left";
-      }
-
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        arguments: [],
-        dataUrl: "Build/wpicryptidsclub.data",
-        frameworkUrl: "Build/wpicryptidsclub.framework.js",
-        codeUrl: "Build/wpicryptidsclub.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "WpiCryptidsClub",
-        productName: "Gompelope_Game",
-        productVersion: "1.0",
-      });
-    </script>
-  </body>
+    #unity-canvas {
+      width: 100%;
+      max-width: 1280px;
+      height: auto;
+      aspect-ratio: 16/9;
+      background-color: #1a1a1a;
+      border: 2px solid #3bffed22;
+      box-shadow: 0 0 30px #3bffed55;
+      display: block;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>WPI Cryptids Club</h1>
+  <canvas id="unity-canvas" tabindex="-1"></canvas>
+  <script src="Build/wpicryptidsclub.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      arguments: [],
+      dataUrl: "Build/wpicryptidsclub.data",
+      frameworkUrl: "Build/wpicryptidsclub.framework.js",
+      codeUrl: "Build/wpicryptidsclub.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "WpiCryptidsClub",
+      productName: "Gompelope_Game",
+      productVersion: "1.0",
+    });
+  </script>
+</body>
 </html>
-
