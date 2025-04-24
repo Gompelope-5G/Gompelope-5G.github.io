@@ -12,18 +12,27 @@
       color: #e5b7b1;
       font-family: 'Georgia', serif;
       text-align: center;
-      overflow: hidden;
+      overflow-x: hidden;
+    }
+
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding-top: 1rem;
+      flex-wrap: wrap;
     }
 
     #logo {
-      margin-top: 1rem;
-      width: 200px;
+      width: 60px;
     }
 
     h1 {
       color: #a62e2e;
       text-shadow: 0 0 10px #510000, 0 0 30px #300000;
-      margin: 0.5rem;
+      font-size: 2rem;
+      margin: 0;
     }
 
     #unity-canvas {
@@ -34,14 +43,16 @@
       border: 2px solid #a62e2e44;
       box-shadow: 0 0 60px #a62e2e88;
       display: block;
-      margin: 1rem auto;
-      z-index: 1;
+      margin: 2rem auto;
+      z-index: 2;
+      position: relative;
     }
 
     .decor {
-      position: absolute;
+      position: fixed;
       width: 120px;
       z-index: 3;
+      pointer-events: none;
     }
 
     .bottom-left { bottom: 10px; left: 10px; }
@@ -50,13 +61,14 @@
     .top-right { top: 10px; right: 10px; }
 
     #ghost {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 180px;
-      opacity: 0.08;
-      z-index: 0;
+      width: 200px;
+      opacity: 0.05;
+      z-index: 1;
+      pointer-events: none;
     }
 
     .fog {
@@ -68,7 +80,7 @@
       background: url('image2.png') repeat;
       opacity: 0.1;
       animation: drift 60s linear infinite;
-      z-index: 2;
+      z-index: 0;
       pointer-events: none;
     }
 
@@ -83,10 +95,14 @@
   </style>
 </head>
 <body>
-  <img src="image.png" alt="Club Logo" id="logo">
-  <h1>WPI Cryptids Club</h1>
 
-  <!-- Canvas -->
+  <!-- Header with logo + title -->
+  <div id="header">
+    <img src="image.png" alt="Club Logo" id="logo">
+    <h1>WPI Cryptids Club</h1>
+  </div>
+
+  <!-- Unity Game Embed -->
   <canvas id="unity-canvas" tabindex="-1"></canvas>
 
   <!-- Unity Script -->
@@ -119,5 +135,6 @@
     <source src="audio.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
 </body>
 </html>
