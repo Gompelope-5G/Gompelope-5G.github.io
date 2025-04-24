@@ -4,13 +4,38 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>WPI Cryptids Club</title>
+    <style>
+      body {
+        background-color: #0d0d0d;
+        color: #cccccc;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      #unity-canvas {
+        background-color: #1a1a1a;
+        box-shadow: 0 0 30px #3bffed55;
+        border: 2px solid #3bffed22;
+        margin-top: 20px;
+      }
+
+      /* Optional spooky glow text effect */
+      h1 {
+        font-size: 2em;
+        color: #3bffed;
+        text-shadow: 0 0 5px #3bffed88, 0 0 10px #3bffed44;
+        margin-top: 1rem;
+      }
+    </style>
   </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=1280 height=720 tabindex="-1" style="width: 1280px; height: 720px; background: #231F20"></canvas>
+  <body>
+    <h1>WPI Cryptids Club</h1>
+    <canvas id="unity-canvas" width="1280" height="720" tabindex="-1"></canvas>
     <script src="Build/wpicryptidsclub.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -33,9 +58,8 @@
         companyName: "WpiCryptidsClub",
         productName: "Gompelope_Game",
         productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
   </body>
 </html>
+
